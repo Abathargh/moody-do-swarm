@@ -1,14 +1,17 @@
-# Cluster setup
+# Moody backend setup deployed on on a docker swarm stack
+
+## Cluster setup (DigitalOcean)
 Based on this tutorial: https://www.digitalocean.com/community/tutorials/how-to-create-a-cluster-of-docker-containers-with-docker-swarm-and-digitalocean-on-ubuntu-16-04#conclusion
+
 More info in the init-droplet.sh file
 
 ```bash
-#execute on your local machine with docker machine installed and your digitalocean token
+#execute the following on your local machine with docker-machine installed and your digitalocean token
 chmod +x init-droplets.sh
 ./init-droplets.sh
 ```
 
-# Initializiation
+## Initializiation
 
 Startup a rev proxy + load balancer for moody, download and execute:
 
