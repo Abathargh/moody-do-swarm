@@ -1,18 +1,18 @@
-if [ $# != 3 ];
+if [ $# != 3 ]; then
     echo "Default conf must have 3 droplets"
     exit 1
 fi
 
-base="upstream dataset {
-    server $1:8002;
-    server $2:8002;
-    server $3:8002;
+base='upstream dataset {
+    server '"$1"':8002;
+    server '"$2"':8002;
+    server '"$3"':8002;
 }
 
 upstream activity {
-    server $1:8001;
-    server $2:8001;
-    server $3:8001;
+    server '"$1"':8001;
+    server '"$2"':8001;
+    server '"$3"':8001;
 }
 
 server {
@@ -33,4 +33,6 @@ server {
     location /situation {
         proxy_pass http://activity/situation;
     }
-}"
+}'
+
+echo "$base" > revproxy.conf

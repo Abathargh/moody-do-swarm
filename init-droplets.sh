@@ -16,6 +16,6 @@ for i in 1 2 3; do
     --digitalocean-size s-1vcpu-1gb \
     --digitalocean-region fra1 \
     --digitalocean-access-token $DOTOKEN \
-    --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" 
+    --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
     moody-node-$1
 done
